@@ -1,0 +1,10 @@
+.vscode
+.idea
+
+target
+*.class
+
+node_modules
+out
+
+venv

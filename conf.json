@@ -1,0 +1,9 @@
+{
+  "source": {
+    "include": ["es6"],
+    "includePattern": ".+\\.(j|t)s(doc|x)?$"
+  },
+  "opts": {
+    "recurse": true
+  }
+}

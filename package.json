@@ -1,0 +1,18 @@
+{
+  "name": "lodashike",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "docs:es6": "jsdoc -c conf.json"
+  },
+  "author": "Harvey <harvey0379@163.com> (https://twitter.com/Harvey27171313)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.10",
+    "jsdoc": "^4.0.2"
+  }
+}
