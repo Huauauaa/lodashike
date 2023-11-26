@@ -1,4 +1,3 @@
-.vscode
 .idea
 
 target
@@ -6,5 +5,10 @@ target
 
 node_modules
 out
+docs/java/*
+docs/ts/*
+docs/es6/*
+docs/python/*
 
 venv
+__pycache__

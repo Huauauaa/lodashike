@@ -1,11 +1,13 @@
 /**
  * Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
- * @param {array} array: The array to process
- * @param {number} [size=1] size: The length of each chunk
+ *
+ * @param array - The array to process
+ * @param size - The length of each chunk
+ * @returns the new array of chunks.
  */
-function chunk(array: any[], size = 1) {
-  const result: typeof array = [];
-  let item: any[] = [];
+function chunk<T>(array: T[], size = 1): T[][] {
+  const result: T[][] = [];
+  let item: T[] = [];
   for (let i = 0; i < array.length; i++) {
     item.push(array[i]);
     if (item.length === size) {

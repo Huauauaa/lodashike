@@ -1,0 +1,7 @@
+{
+  "name": "function",
+  "version": "1.0.0",
+  "scripts": {
+    "docs": "typedoc --out docs"
+  }
+}

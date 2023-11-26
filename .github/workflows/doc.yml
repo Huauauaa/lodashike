@@ -1,0 +1,74 @@
+name: js ts pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Generate python docs
+        run: |
+          cd python
+          python3 -m pydoc -w ./
+
+      - name: Copy python docs files
+        run: |
+          rm -rf docs/python
+          mkdir -vp docs/python
+          cp -vrf python/*.html docs/python
+
+      - name: Set up the Java JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Generate docs
+        run: |
+          cd java
+          mvn javadoc:javadoc
+
+      - name: Copy java docs files
+        run: |
+          rm -rf docs/java
+          mkdir -vp docs/java
+          cp -vrf java/target/site/apidocs/* docs/java
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
+      - run: yarn typedoc
+      - run: yarn jsdoc
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

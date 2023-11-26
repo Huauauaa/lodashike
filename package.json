@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "docs:es6": "jsdoc -c conf.json"
+    "jsdoc": "jsdoc -c conf.json",
+    "typedoc": "typedoc --tsconfig typedoc.json --out docs/ts",
+    "pydoc": "python3 -m pydoc -p 1234",
+    "javadoc": "javadoc -d ./docs/java -encoding utf-8 -charset utf-8 -sourcepath ./java/src/main/java -subpackages com.huauauaa"
   },
   "author": "Harvey <harvey0379@163.com> (https://twitter.com/Harvey27171313)",
   "license": "MIT",
@@ -13,6 +16,9 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@types/jest": "^29.5.10",
-    "jsdoc": "^4.0.2"
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.2",
+    "typedoc": "^0.25.3",
+    "typescript": "^5.3.2"
   }
 }
