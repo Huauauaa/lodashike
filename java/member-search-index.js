@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"com.huauauaa","c":"Array","l":"Array()","url":"%3Cinit%3E()"},{"p":"com.huauauaa","c":"Array","l":"chunk(T[], int)","url":"chunk(T[],int)"}]
+memberSearchIndex = [{"p":"com.huauauaa.array","c":"Chunk","l":"Chunk()","url":"%3Cinit%3E()"},{"p":"com.huauauaa.array","c":"Chunk","l":"chunk(int[], int)","url":"chunk(int[],int)"},{"p":"com.huauauaa.array","c":"Chunk","l":"chunk(int[])"}]
