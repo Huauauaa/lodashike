@@ -1,8 +1,9 @@
 def compact(array: list):
-    """
-    Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
+    """Creates an array with all falsey values removed.
+    The values false, null, 0, "", undefined, and NaN are falsey.
     :param array: The array to compact.
-    :return:
+    
+    source: http://github.com/Huauauaa/lodashike/blob/main/python/array/compact.py
     """
     res = list()
     for item in array:
