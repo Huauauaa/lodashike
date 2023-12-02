@@ -3,5 +3,6 @@
     // These options are necessary so that TypeDoc can resolve references across packages
     "declaration": true,
     "declarationMap": true
-  }
+  },
+  "include": ["ts/lang"]
 }
